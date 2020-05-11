@@ -5,8 +5,7 @@ import org.chocosolver.solver.*;
 import org.chocosolver.solver.variables.IntVar;
 
 public class DFS {
-    public void DFA(IntVar[] cells, int[] rest, Model model){
-        System.out.println(cells.length);
+    public void DFA(BoolVar[] cells, int[] rest, Model model){
         StringBuilder regex = new StringBuilder("0*");
         int m = rest.length;
         for (int i = 0; i < m; i++) {
@@ -14,11 +13,12 @@ public class DFS {
             regex.append('0');
             regex.append(i == m - 1 ? '*' : '+');
         }
+        FiniteAutomaton auto = new FiniteAutomaton(regex.toString());
 
-        IAutomaton auto = new FiniteAutomaton(regex.toString());
         model.regular(cells, auto).post();
+//        model.regular(model.regularDec(cells,auto),auto).post();
     }
-    public void DFA2(IntVar[] cells, int[] seq, Model model) {
+    public void DFA2(BoolVar[] cells, int[] seq, Model model) {
         FiniteAutomaton auto = new FiniteAutomaton();
         int si = auto.addState();
         auto.setInitialState(si); // declare it as initial state
