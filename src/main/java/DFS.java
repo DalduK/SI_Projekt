@@ -14,9 +14,7 @@ public class DFS {
             regex.append(i == m - 1 ? '*' : '+');
         }
         FiniteAutomaton auto = new FiniteAutomaton(regex.toString());
-
         model.regular(cells, auto).post();
-//        model.regular(model.regularDec(cells,auto),auto).post();
     }
     public void DFA2(BoolVar[] cells, int[] seq, Model model) {
         FiniteAutomaton auto = new FiniteAutomaton();
