@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class main {
     public static void main(String[] args) {
 
-        int[][][]BLOCKS = {{{2, 3, 1},
+       Integer[][][]BLOCKS = {{{2, 3, 1},
                 {5, 2},
                 {1, 3, 1, 1},
                 {2, 2, 1, 1},
@@ -19,7 +21,7 @@ public class main {
                 {4},
         }};
 
-        int[][][]maly = {{{1, 1},
+        Integer[][][]maly = {{{1, 1},
                 {1},
         }, {
                 {1},
@@ -28,7 +30,7 @@ public class main {
         }};
 
 
-        int[][][]wielki = {{{3, 5},
+        Integer[][][]wielki = {{{3, 5},
                 {1, 5},
                 {1, 6},
                 {5},
@@ -50,7 +52,7 @@ public class main {
                 {5, 1},
                 {3},
         }};
-        int[][][]cross = {{
+        Integer[][][]cross = {{
             {2},
             {3},
             {6},
@@ -100,7 +102,7 @@ public class main {
                 {2,2},
         }};
 
-        int[][][] wiki = {{
+        Integer[][][] wiki = {{
                         {8, 7, 5, 7},
                         {5, 4, 3, 3},
                         {3, 3, 2, 3},
@@ -153,23 +155,10 @@ public class main {
                         {1},
                         {1},
                 }};
-        Nonogram n = new Nonogram( cross[1].length,cross[0].length, cross);
-        n.solver();
-        System.out.println();
-        System.out.println("------------------------------------------");
-        Nonogram n2 = new Nonogram( BLOCKS[1].length,BLOCKS[0].length, BLOCKS);
-        n2.solver();
-        System.out.println();
-        System.out.println("------------------------------------------");
-        Nonogram n3 = new Nonogram( wiki[1].length,wiki[0].length, wiki);
-        n3.solver();
-        System.out.println();
-        System.out.println("------------------------------------------");
-        Nonogram n4 = new Nonogram( maly[1].length,maly[0].length, maly);
-        n4.solver();
-        System.out.println();
-        System.out.println("------------------------------------------");
-        Nonogram n5 = new Nonogram( wielki[1].length,wielki[0].length, wielki);
-        n5.solver();
+        System.setProperty("webdriver.chrome.driver", "C:/Users/Przemeczek/.wdm/drivers/chromedriver/81.0.4044.138/win32/chromedriver.exe"); // sciezka do chrome drivera
+        scrap s = new scrap("21650"); //tutaj wpisujesz id ze strony https://webpbn.com/
+        Integer[][][] xml = s.getNon();
+        Nonogram n6 = new Nonogram( xml[1].length,xml[0].length, xml);
+        n6.solver();
     }
 }
