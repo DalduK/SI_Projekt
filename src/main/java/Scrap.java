@@ -16,13 +16,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.management.DynamicMBean;
 
 
-public class scrap {
+public class Scrap {
 
     ArrayList<ArrayList<Integer>> nonX = new ArrayList<>();
     ArrayList<ArrayList<Integer>> nonY = new ArrayList<>();
     ArrayList<ArrayList<ArrayList<Integer>>> non = new ArrayList<>();
 
-    public scrap(String num){
+    public Scrap(String num){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
         WebDriver driver = new ChromeDriver(options);
