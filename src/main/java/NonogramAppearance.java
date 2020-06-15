@@ -139,7 +139,6 @@ public class NonogramAppearance extends Pane {
 //        System.out.println(s);
 //        //przykłady 30463, 7200
 //        Integer[][][] xml = s.getNon();
-//        System.out.println(xml);
         Nonograms n = new Nonograms();
         Nonogram temp = new Nonogram(n.kotwica[1].length, n.kotwica[0].length, n.kotwica);
 
