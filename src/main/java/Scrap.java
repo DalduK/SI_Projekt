@@ -38,7 +38,6 @@ public class Scrap {
             int count = 0;
             while( (line=bufReader.readLine()) != null )
             {
-                //TODO: zaktulizowac metode aby przyjmowala tez puste tabele nonogrmow
                 if(count < 2){
                     count++;
                     continue;

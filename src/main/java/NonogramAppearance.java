@@ -73,7 +73,6 @@ public class NonogramAppearance extends Pane {
             topLabels[i] = new VBox();
             topLabels[i].setLayoutX(120 + i * (TILE_SIZE));
 
-            //TODO rozwiązać problem wchodzenia literek pod obiekty TILE
             for (int j = 0; j < nonogram.Blocks[1][i].length; j++) {
                 String nValue = nonogram.Blocks[1][i][j].toString() + ", ";// przy każdej iteracji można zwięszać wielkość offsetu o rozmiar litery aby wszystkie się mieściły
                 Label label = new Label(nValue);
