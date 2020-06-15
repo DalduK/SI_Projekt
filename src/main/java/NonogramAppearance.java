@@ -142,15 +142,6 @@ public class NonogramAppearance extends Pane {
 //        Integer[][][] xml = s.getNon();
 //        System.out.println(xml);
         Nonograms n = new Nonograms();
-//        long startTime = System.nanoTime();
-//        Nonogram temp = new Nonogram(xml[1].length, xml[0].length, xml);
-//        long endTime = System.nanoTime();
-//        long timeElapsed = endTime - startTime;
-//        System.out.println(startTime);
-//        System.out.println(endTime);
-//        System.out.println(timeElapsed);
-//        System.out.println("Time: " + timeElapsed/1000000);
-//        System.out.println(com.sun.javafx.runtime.VersionInfo.getRuntimeVersion());
         Nonogram temp = new Nonogram(n.kotwica[1].length, n.kotwica[0].length, n.kotwica);
 
         return temp;
