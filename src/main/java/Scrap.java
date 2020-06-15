@@ -23,6 +23,7 @@ public class Scrap {
     ArrayList<ArrayList<ArrayList<Integer>>> non = new ArrayList<>();
 
     public Scrap(String num){
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
         WebDriver driver = new ChromeDriver(options);

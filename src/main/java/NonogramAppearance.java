@@ -1,4 +1,9 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -44,7 +49,6 @@ public class NonogramAppearance extends Pane {
         X_TILES = nonogram.cells[0].length;
         TILE_SIZE = Heigth / X_TILES;
         grid = new Tile[X_TILES][Y_TILES];
-
 
         for (int y = 0; y < X_TILES; y++) {
             for (int x = 0; x < Y_TILES; x++) {
@@ -117,7 +121,9 @@ public class NonogramAppearance extends Pane {
 
             setTranslateX(100 + y * TILE_SIZE);
             setTranslateY(100 + x * TILE_SIZE);
+//            open();
             setOnMouseClicked(e -> open());
+
         }
 
         public void open() {
@@ -130,12 +136,22 @@ public class NonogramAppearance extends Pane {
 
     private Nonogram setNonogram() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Desktop\\chromedriver\\chromedriver.exe"); // sciezka do chrome drivera
-        Scrap s = new Scrap("16175"); //tutaj wpisujesz id ze strony https://webpbn.com/
-        //przykłady 30463, 7200
-        Integer[][][] xml = s.getNon();
+//        Scrap s = new Scrap("7200"); //tutaj wpisujesz id ze strony https://webpbn.com/
+//        System.out.println(s);
+//        //przykłady 30463, 7200
+//        Integer[][][] xml = s.getNon();
+//        System.out.println(xml);
         Nonograms n = new Nonograms();
-        Nonogram temp = new Nonogram(xml[1].length, xml[0].length, xml);
-//        Nonogram temp = new Nonogram(n.wielki[1].length, n.wielki[0].length, n.wielki);
+//        long startTime = System.nanoTime();
+//        Nonogram temp = new Nonogram(xml[1].length, xml[0].length, xml);
+//        long endTime = System.nanoTime();
+//        long timeElapsed = endTime - startTime;
+//        System.out.println(startTime);
+//        System.out.println(endTime);
+//        System.out.println(timeElapsed);
+//        System.out.println("Time: " + timeElapsed/1000000);
+//        System.out.println(com.sun.javafx.runtime.VersionInfo.getRuntimeVersion());
+        Nonogram temp = new Nonogram(n.kotwica[1].length, n.kotwica[0].length, n.kotwica);
 
         return temp;
     }

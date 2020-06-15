@@ -16,6 +16,7 @@ public class DFS {
         FiniteAutomaton auto = new FiniteAutomaton(regex.toString());
         model.regular(cells, auto).post();
     }
+
     public void DFA2(BoolVar[] cells, Integer[] seq, Model model) {
         FiniteAutomaton auto = new FiniteAutomaton();
         int si = auto.addState();
